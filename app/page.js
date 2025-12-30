@@ -1,39 +1,38 @@
 
+"use client"
+import { useState } from "react"
+
 export default function Home() {
 
+  const [data, setData] = useState(0);
+
+  const Incre = () => {
+
+    setData(data + 1);
+
+  }
+
+
+  const Decre = () => {
+    if (data == 0) {
+      alert(" 0 is not be descread");
+
+
+    }
+    else {
+      setData(data - 1);
+
+    }
+  }
 
   return (
 
     <>
 
-      <h1>This is Next Js Component </h1>
-      <User name="premkumar Savale " />
-      <Data />
+      <h1> {data}</h1>
+      <button onClick={Incre}> Incerement </button>
+      <button onClick={Decre}> Decrement </button>
 
-    </>
-
-  );
-}
-
-const User = (props) => {
-
-  return (
-
-    <>
-
-      <h1> {props.name}</h1>
-      <h1> This is User Component </h1>
-
-    </>
-  )
-}
-
-const Data = () => {
-  return (
-
-    <>
-
-      <p> This is Data Component ....</p>
 
     </>
   )
